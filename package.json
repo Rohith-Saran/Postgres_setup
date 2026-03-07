@@ -4,7 +4,6 @@
   "description": "postgress_setup",
   "license": "ISC",
   "author": "Rohith",
-  "type": "commonjs",
   "main": "index.js",
   "type": "module",
   "scripts": {

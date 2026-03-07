@@ -10,21 +10,15 @@ client.connect();
 
 async function createUsersTable() {
     const result = await client.query(`
-        CREATE TABLE IF NOT EXISTS users (
+        CREATE TABLE users (
             id SERIAL PRIMARY KEY,
-            username VARCHAR(255) NOT NULL,
+            username VARCHAR(50) UNIQUE NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
             password VARCHAR(255) NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
         );
     `);
     console.log("Users table created:", result);
 }
 
-async function insertUser(name: string, email: string) {
-    const result = await client.query(`
-        INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *;
-    `, [name, email]);
-    console.log("Inserted user:", result.rows[0]);
-}
 
