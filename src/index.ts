@@ -2,7 +2,8 @@
 import { Client } from 'pg';
 const client = new Client({
 
-    connectionString: "postgresql://neondb_owner:npg_1Hwt0XefdvkC@ep-silent-dream-ai3xdumw-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    connectionString: 'postgresql://neondb_owner:npg_MEUva1o4mXVD@ep-wispy-field-a4dfwpaj-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
 
 });
 client.connect();
